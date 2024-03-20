@@ -131,6 +131,23 @@
 
                             <li>
                                 <a href="javascript: void(0);">
+                                    <i class="mdi mdi-pen"></i>
+                                    <span> Prescriptions  </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                    <a href="his_doc_add_presc.php">Add Prescription</a>
+                                        <a href="his_doc_manage_presc.php"> Manage Prescription</a>
+                                        
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
                                     <i class="mdi mdi-cash-refund "></i>
                                     <span> Payrolls </span>
                                     <span class="menu-arrow"></span>

@@ -8,6 +8,7 @@
 			$doc_lname=$_POST['doc_lname'];
 			$doc_number=$_POST['doc_number'];
             $doc_email=$_POST['doc_email'];
+           
             $doc_pwd=sha1(md5($_POST['doc_pwd']));
             
             //sql to insert captured values
@@ -104,13 +105,12 @@
                                                     <label for="inputZip" class="col-form-label">Doctor Number</label>
                                                     <input type="text" name="doc_number" value="<?php echo $patient_number;?>" class="form-control" id="inputZip">
                                                 </div>
-
-                                            <div class="form-group">
+                                        <div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
                                                 <label for="inputAddress" class="col-form-label">Email</label>
                                                 <input required="required" type="email" class="form-control" name="doc_email" id="inputAddress">
                                             </div>
-
-                                            <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputCity" class="col-form-label">Password</label>
                                                     <input required="required" type="password" name="doc_pwd" class="form-control" id="inputCity">

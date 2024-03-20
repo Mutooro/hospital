@@ -99,15 +99,15 @@
                                             </div>
 
                                             <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputEmail4" class="col-form-label">Date Of Birth</label>
-                                                    <input type="text" required="required" name="pat_dob" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputPassword4" class="col-form-label">Age</label>
-                                                    <input required="required" type="text" name="pat_age" class="form-control"  id="inputPassword4" placeholder="Patient`s Age">
-                                                </div>
-                                            </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4" class="col-form-label">Date Of Birth</label>
+            <input type="date" required="required" name="pat_dob" class="form-control" id="pat_dob" placeholder="DD/MM/YYYY" onclick="calculateAge()">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4" class="col-form-label">Age</label>
+            <input required="required" type="text" name="pat_age" class="form-control"  id="pat_age" placeholder="Patient's Age">
+        </div>
+    </div>
 
                                             <div class="form-group">
                                                 <label for="inputAddress" class="col-form-label">Address</label>
@@ -161,9 +161,7 @@
 
             </div>
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+            
 
 
         </div>
@@ -172,6 +170,25 @@
        
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+        <script>
+        function calculateAge() {
+            // Get the value of the date of birth input field
+            var dob = document.getElementById("pat_dob").value;
+
+            // Calculate age based on date of birth
+            var today = new Date();
+            var birthDate = new Date(dob);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            // Update the value of the age input field
+            document.getElementById("pat_age").value = age;
+        }
+    </script>
 
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>

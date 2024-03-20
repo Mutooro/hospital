@@ -80,6 +80,12 @@
                                         <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Ailment :</strong> <span class="ml-2"><?php echo $row->pat_ailment;?></span></p>
+                                        <p class="text-muted mb-2 font-13">
+                                        <strong>Status :</strong>
+                                        <span class="ml-2" style="<?php echo $row->pat_discharge_status == 'Discharged' ? 'color: red;' : 'color: blue;' ?>">
+                                            <?php echo $row->pat_discharge_status == 'Discharged' ? 'Discharged' : 'Active'; ?>
+                                        </span>
+                                        </p>
                                         <hr>
                                         <p class="text-muted mb-2 font-13"><strong>Date Recorded :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
                                         <hr>
